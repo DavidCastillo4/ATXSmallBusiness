@@ -1,0 +1,23 @@
+#navBar {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ background-color: black;
+ height: 80px;
+ margin-bottom: 72px;
+}
+
+h2 {
+ color: white;
+ padding-left: 20px;
+}
+
+li {
+ width: 80px;
+ list-style-type: none;
+}
+
+.a, .a:hover, .a:visited {
+ color: white;
+ text-decoration: none;
+}

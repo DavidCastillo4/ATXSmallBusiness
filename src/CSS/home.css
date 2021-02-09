@@ -1,0 +1,9 @@
+#list>tr>td {
+ cursor: pointer;
+}
+
+#addBtn { 
+ position: absolute;
+ top: 97px;
+ right: 30px; 
+}
