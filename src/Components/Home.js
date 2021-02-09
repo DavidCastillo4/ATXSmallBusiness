@@ -14,8 +14,7 @@ export let Home = () => {
  let [modalShow, setModalShow] = useState(false);
  let [modalAdd, setModalAdd] = useState(false);
  let [company, setCompany] = useState({});
- let [visible, setVisible] = useState(authenticated ? 'table-cell' : 'none');
- let css = { toggleVis: { display: visible, cursor: 'auto' } };
+ let [visible, setVisible] = useState(authenticated ? 'table-cell' : 'none'); 
 
  useEffect(() => { setVisible(authenticated ? 'table-cell' : 'none') }, [authenticated]);
 
@@ -70,7 +69,7 @@ export let Home = () => {
       <th>Company</th>
       <th>Latitude</th>
       <th>Logitude</th>
-      <th style={css.toggleVis}>Delete</th>
+      <th style={{ display: visible }}>Delete</th>
      </tr>
     </thead>
     <tbody id='list'>
@@ -80,7 +79,7 @@ export let Home = () => {
        <td onClick={() => showCompany(company)}>{company.name}</td>
        <td onClick={() => showCompany(company)}>{company.lat}</td>
        <td onClick={() => showCompany(company)}>{company.lng}</td>
-       <td id='deleteCol' style={css.toggleVis} >
+       <td id='deleteCol' style={{ display: visible }} >
         <BsFillTrashFill onClick={() => dispatch({ type: 'delete', payload: company.id })} /></td>
       </tr>
      ))}
@@ -89,7 +88,7 @@ export let Home = () => {
 
    <Company show={modalShow} onHide={() => setModalShow(false)} />
    <AddCompany show={modalAdd} onHide={() => setModalAdd(false)} />
-   <Button id='addBtn' style={css.toggleVis} onClick={() => showModalAdd()} variant='dark'>Add Company</Button>
+   <Button id='addBtn' style={{ display: visible }} onClick={() => showModalAdd()} variant='dark'>Add Company</Button>
   </div>
  );
 };
