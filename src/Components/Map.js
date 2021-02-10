@@ -4,7 +4,8 @@ import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from "reac
 import { Context } from '../Context/context';
 
 let url = 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key='
-let key = 'AIzaSyDAMMHObX6_hiX3nFECjSJxwGSfvoiGsN0';
+//let key = 'AIzaSyDAMMHObX6_hiX3nFECjSJxwGSfvoiGsN0';
+let key = process.env.REACT_APP_key;
 
 let Maps = () => {
  let [loc, setLoc] = useState(null);
